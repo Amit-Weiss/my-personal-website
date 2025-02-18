@@ -10,6 +10,12 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Horizontally centers child elements */
+    text-align: center;
+    /* Centers text inside child elements */
     background: #fff;
     padding: 1em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -20,6 +26,8 @@ header {
 
 nav ul {
     display: flex;
+    justify-content: center;
+    /* Center nav links horizontally */
     list-style: none;
     gap: 1em;
     padding: 0;
@@ -85,4 +93,73 @@ a:focus {
 .animate.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    /* Space between the image and text */
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* This makes the image circular */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Container for the toggle switch */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+/* Hide the default checkbox */
+.theme-toggle {
+    display: none;
+}
+
+/* Style the label to look like a switch */
+.toggle-label {
+    width: 50px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* The toggle ball (slider) */
+.toggle-ball {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* When the checkbox is checked, change the background and slide the ball */
+.theme-toggle:checked+.toggle-label {
+    background: #005fcc;
+}
+
+.theme-toggle:checked+.toggle-label .toggle-ball {
+    transform: translateX(26px);
 }
