@@ -1,0 +1,88 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: #fff;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #005fcc;
+}
+
+main {
+    padding: 2em;
+    max-width: 1000px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #333;
+}
+
+body.dark-mode nav a {
+    color: #eee;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a:focus {
+    color: #ffa500;
+}
+
+/* Accessibility: Focus Outline */
+a:focus {
+    outline: 2px solid #005fcc;
+}
+
+/* Scroll-triggered Animations */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
